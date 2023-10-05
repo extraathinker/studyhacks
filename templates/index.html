@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+    <img src="/static/images/1a.jpg" class="img-fluid mx-0" style="height : 700px; width : 100%; object-fit: cover;">
+    
+    <div class="container-fluid">
+		<div class="container p-3" style="width: 900px;">
+			<h3 class="display-6 p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+		</div>
+    </div>
+    <div class="container-fluid text-center">
+    	<div class="container">
+    		<h2 class="fw-bold text-uppercase text-start display-6 p-3">Latest Posts</h2>
+    	</div>
+    	<div class="row">
+			{% for n in blogPost %}
+				<div class="col-lg-4 p-3">
+					<div class="card" style="width: 28rem;">
+						<img src="/media/{{n.postImg}}" class="card-img-top" alt="..." />
+						<div class="card-body">
+							<h5 class="card-title">{{n.title}}</h5>
+							<p class="card-text">{{n.description}}</p>
+							<a href="/single/{{n.titleSlug}}" class="btn btn-primary">See Post</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+    	</div>
+    </div>
+
+    {% endblock %}

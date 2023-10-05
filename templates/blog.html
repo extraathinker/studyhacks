@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <!-- main content -->
+    <div class="container-fluid">
+    	<div class="container">
+    		<h2 class="fw-bold text-uppercase text-start display-5 p-3 ms-4">Posts</h2>
+    		
+			{% for n in blogPost %}
+    		<!-- Post Number 2: -->
+    		<div class="container-lg p-3" style="width: 70%;">
+	    		<a href="/single/{{n.titleSlug}}"><img src="/media/{{n.postImg}}" class="img-fluid mx-auto "></a>
+	    		<h5 class="display-6 text-uppercase p-3"><a href="/single/{{n.titleSlug}}" class="text-decoration-none">{{n.title}}</a></h5>
+	    		<p class="fs-4 p-3">{{n.description}}</p>
+
+	    		<h1 class="text-center fw-lighter p-3">________________________________________________</h1>
+    		</div>
+
+			{% endfor %}
+    	</div>
+    </div>
+
+
+    {% endblock %}

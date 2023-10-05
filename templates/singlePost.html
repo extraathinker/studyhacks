@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <img src="/media/{{blogPost.postImg}}" class="img-fluid mx-0" style="height : 700px; width : 100%; object-fit: cover;">
+    <div class="container-fluid">
+    	<div class="container text-center p-4">
+    		<h1 class="p-4 display-3 text-uppercase">{{blogPost.title}}</h1>
+    		<h3 class="p-4 display-5">{{blogPost.description}}</h3>
+
+    		<button type="button" class="btn btn-primary">
+			    <i class="bi bi-hand-thumbs-up fs-4"></i><span class="badge text-bg-secondary display-3">4</span>
+			</button>
+			<button type="button" class="btn btn-primary">
+			    <i class="bi bi-hand-thumbs-down fs-4"></i><span class="badge text-bg-secondary display-3">4</span>
+			</button>
+    	</div>
+    </div>
+
+	{% endblock %}
